@@ -1,5 +1,5 @@
 # ideal-octo-disco
-Simple Web Driver
+Simple Web Driver Example
 
 
     $ git clone https://github.com/masmangan/ideal-octo-disco.git  
