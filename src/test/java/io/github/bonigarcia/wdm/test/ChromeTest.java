@@ -61,18 +61,18 @@ public class ChromeTest {
 
     @Test
     public void test() {
-        // Your test code here. For example:
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
-        By searchInput = By.id("searchInput");
-        wait.until(presenceOfElementLocated(searchInput));
-        driver.findElement(searchInput).sendKeys("Software");
-        By searchButton = By.id("searchButton");
-        wait.until(elementToBeClickable(searchButton));
-        driver.findElement(searchButton).click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        driver.get(
+                "https://www.netflix.com/br/");
+        By email = By.id("id_email_hero_fuji");
+        wait.until(presenceOfElementLocated(email));
+        driver.findElement(email).sendKeys("usuario123@erro");
+        By continueButton = By.className("cta-btn-txt");
+        driver.findElement(continueButton).click();
 
-        wait.until(textToBePresentInElementLocated(By.tagName("body"),
-                "Computer software"));
+        wait.until(textToBePresentInElementLocated(By.className("inputError"),
+                "Insira um email válido."));
+
     }
 
 }
